@@ -8,7 +8,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-    
+
     @task = Task.find(params[:id])
   end
 
@@ -24,7 +24,7 @@ class TasksController < ApplicationController
   end
 
   def update
-    raise
+    # raise
     @task = Task.find(params[:id])
     @task.update(task_params)
     # Will raise ActiveModel::ForbiddenAttributesError
