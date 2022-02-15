@@ -3,7 +3,15 @@
 <ul>
   <% @tasks.each do |task| %>
     <li><%= task.completed %>
-    <%= link_to "#{task.title}", task_path(task) %> </li>
+    <%= link_to "#{task.title}", task_path(task) %>
+
+    <!-- app/views/restaurants/show.html.erb -->
+    <%= link_to "Delete #{task.title}",
+                task_path(task),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+
+    </li>
   <% end %>
 </ul>
 <br>
