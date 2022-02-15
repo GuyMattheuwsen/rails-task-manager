@@ -1,0 +1,11 @@
+<h1>Edit!!!!!!!!</h1>
+<%# <% raise %> %>
+<%= simple_form_for(@task) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+  <%# <%= f.label :completed %>
+  <%# <%= f.boolean_field :completed %>
+  <%= f.submit %>
+<% end %>

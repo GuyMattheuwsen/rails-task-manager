@@ -7,6 +7,11 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
+  def edit
+    
+    @task = Task.find(params[:id])
+  end
+
   def new
     @task = Task.new # needed to instantiate the form_for
   end
@@ -19,14 +24,16 @@ class TasksController < ApplicationController
   end
 
   def update
+    raise
     @task = Task.find(params[:id])
-    @task.update(params[:task])
+    @task.update(task_params)
     # Will raise ActiveModel::ForbiddenAttributesError
+    redirect_to task_path(@task)
   end
 
   private
 
   def task_params
-    params.require(:task).permit(:title, :details)
+    params.require(:task).permit(:title, :details, :completed)
   end
 end
